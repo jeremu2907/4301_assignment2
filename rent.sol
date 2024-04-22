@@ -20,9 +20,9 @@ contract RentManagementSystem {
         require(msg.sender == landlord, "Only landlord can perform this action");
         _;
     }
-    
-    constructor() {
-        landlord = msg.sender;
+
+    constructor(address _landlord) {
+        landlord = _landlord;
     }
 
     function getAllProperties() public view returns (Property[] memory) {
